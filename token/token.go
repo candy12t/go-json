@@ -15,7 +15,8 @@ const (
 
 	NUMBER = "NUMBER"
 	STRING = "STRING"
-	BOOL   = "BOOL"
+	TRUE   = "TRUE"
+	FALSE  = "FALSE"
 	NULL   = "NULL"
 )
 
@@ -29,4 +30,17 @@ func New(token Type, literal byte) Token {
 		Type:    token,
 		Literal: string(literal),
 	}
+}
+
+var keywords = map[string]Type{
+	"true":  TRUE,
+	"false": FALSE,
+	"null":  NULL,
+}
+
+func LookupIdentifier(indentifier string) Type {
+	if tokenType, ok := keywords[indentifier]; ok {
+		return tokenType
+	}
+	return ILLEGAL
 }
