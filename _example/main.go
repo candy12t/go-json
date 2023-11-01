@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"log"
 
 	"github.com/candy12t/go-json"
 )
@@ -29,7 +30,10 @@ func main() {
   }
 }
 `
-		result := json.NewParser(input).Parse()
+		result, err := json.NewParser(input).Parse()
+		if err != nil {
+			log.Fatal(err)
+		}
 		fmt.Println(result)
 	}
 
@@ -58,7 +62,10 @@ func main() {
   }
 ]
 `
-		result := json.NewParser(input).Parse()
+		result, err := json.NewParser(input).Parse()
+		if err != nil {
+			log.Fatal(err)
+		}
 		fmt.Println(result)
 	}
 }
