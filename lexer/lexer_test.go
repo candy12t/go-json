@@ -11,7 +11,7 @@ func TestLexer(t *testing.T) {
 {
   "Image": {
     "Width": 800,
-    "Height": 600,
+    "Height": "600",
     "Title": "View from 15th Floor",
     "Thumbnail": {
       "Url": "http://www.example.com/image/481989943",
@@ -43,7 +43,7 @@ func TestLexer(t *testing.T) {
 		{token.COMMA, ","},
 		{token.STRING, "Height"},
 		{token.COLON, ":"},
-		{token.NUMBER, "600"},
+		{token.STRING, "600"},
 		{token.COMMA, ","},
 		{token.STRING, "Title"},
 		{token.COLON, ":"},

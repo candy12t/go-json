@@ -77,7 +77,7 @@ func (l *Lexer) readString() string {
 	position := l.position
 	for {
 		l.readChar()
-		if l.char == '"' || l.char == '0' {
+		if l.char == '"' || l.char == 0 {
 			break
 		}
 	}
