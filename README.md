@@ -2,7 +2,7 @@
 
 json parser
 
-> **Warning**
+> [!WARNING]
 > **This is a repository to learn how to write the json parser and do not use production.**
 
 ## refs
